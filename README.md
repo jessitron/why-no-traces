@@ -17,7 +17,7 @@ But, it doesn't send anything.
 
 ## Check the span context to see whether the Trace ID is populated.
 
-One thing I always check is: did the span get a Trace ID at all? I print out its SpanContext. In Node, that looks like this:
+One thing I always check is: did the span get a Trace ID at all? I print out its SpanContext. In Node, that looks like [this](https://github.com/jessitron/why-no-traces/blob/ea4aab3c953f57bde99c493feff6cb58e669e4bd/main.js):
 
 ```
 import opentelemetry from "@opentelemetry/api";
@@ -36,4 +36,4 @@ Span Context: {"traceId":"00000000000000000000000000000000","spanId":"0000000000
 
 Look at all those zeros! When the Trace ID is all zeros, that means tracing was not initialized.
 
-Sometimes that means tracing was not ini
+Sometimes that means tracing was not initialized _yet_. Wait for the SDK to start up before running your main function.
