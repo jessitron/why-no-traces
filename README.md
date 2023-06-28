@@ -7,7 +7,7 @@ This happened to us on AWS Lambda, and it could happen other places too. These d
 Here's the least [code](https://github.com/jessitron/why-no-traces/blob/200630747e2d76ef033d70363a0a7df45583b42b/main.js) that should send a span:
 
 ```
-import opentelemetry from "@opentelemetry/api";
+const opentelemetry = require("@opentelemetry/api");
 
 const tracer = opentelemetry.trace.getTracer("jessitron play");
 tracer.startSpan("your favorite span").end();
@@ -20,7 +20,7 @@ But, it doesn't send anything.
 One thing I always check is: did the span get a Trace ID at all? I print out its SpanContext. In Node, that looks like [this](https://github.com/jessitron/why-no-traces/blob/ea4aab3c953f57bde99c493feff6cb58e669e4bd/main.js):
 
 ```
-import opentelemetry from "@opentelemetry/api";
+const opentelemetry = require("@opentelemetry/api");
 
 const tracer = opentelemetry.trace.getTracer("jessitron play");
 const span = tracer.startSpan("your favorite span");
