@@ -55,3 +55,6 @@ Then we got output like this:
 ```txt
 Span Context: {"traceId":"0da3aa6fe6831e4cc0bf545702195448","spanId":"f726b788cd02eb04","traceFlags":0}
 ```
+
+It's a real Trace ID! But we still didn't see it in Honeycomb. 😡
+
