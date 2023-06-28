@@ -1,4 +1,4 @@
-const nodesdk = import("@opentelemetry/sdk-node");
+const nodesdk = require("@opentelemetry/sdk-node");
 
 const sdk = new nodesdk.NodeSDK({});
 
