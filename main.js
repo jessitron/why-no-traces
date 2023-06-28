@@ -1,4 +1,4 @@
-const opentelemetry= require("@opentelemetry/api");
+const opentelemetry = require("@opentelemetry/api");
 
 console.log("Hello there");
 
